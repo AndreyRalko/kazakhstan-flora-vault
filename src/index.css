@@ -2,41 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Kazakhstan Digital Herbarium Design System
+   Inspired by the natural landscapes of Kazakhstan: steppes, mountains, and diverse flora
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - clean, natural whites and darks */
+    --background: 120 20% 98%;
+    --foreground: 140 15% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card system - soft, organic feel */
+    --card: 110 25% 97%;
+    --card-foreground: 140 20% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover system */
+    --popover: 110 30% 96%;
+    --popover-foreground: 140 20% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - deep forest green representing Kazakhstan's nature */
+    --primary: 145 60% 25%;
+    --primary-foreground: 120 30% 95%;
+    --primary-hover: 145 65% 30%;
+    --primary-active: 145 70% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - warm steppe gold */
+    --secondary: 45 70% 88%;
+    --secondary-foreground: 145 50% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones - sage and natural grays */
+    --muted: 120 15% 92%;
+    --muted-foreground: 140 12% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - bright mountain meadow green */
+    --accent: 130 50% 75%;
+    --accent-foreground: 140 60% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 145 60% 45%;
+    --success-foreground: 0 0% 98%;
+    --warning: 45 100% 60%;
+    --warning-foreground: 45 30% 15%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* UI elements */
+    --border: 130 20% 85%;
+    --input: 125 15% 90%;
+    --ring: 145 60% 50%;
 
-    --radius: 0.5rem;
+    /* Gradients - Kazakhstan's natural beauty */
+    --gradient-primary: linear-gradient(135deg, hsl(145 60% 25%) 0%, hsl(130 55% 35%) 100%);
+    --gradient-steppe: linear-gradient(45deg, hsl(45 70% 75%) 0%, hsl(60 80% 65%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(145 40% 85%) 0%, hsl(120 30% 92%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(110 25% 97%) 0%, hsl(120 20% 95%) 100%);
+
+    /* Shadows - organic, soft */
+    --shadow-soft: 0 2px 8px hsl(145 30% 40% / 0.1);
+    --shadow-medium: 0 4px 20px hsl(145 40% 30% / 0.15);
+    --shadow-strong: 0 8px 40px hsl(145 50% 20% / 0.2);
+    --shadow-plant: 0 6px 24px hsl(130 40% 40% / 0.12);
+
+    /* Animation timings */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +89,60 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 140 15% 8%;
+    --foreground: 120 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 140 20% 10%;
+    --card-foreground: 120 15% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 140 25% 12%;
+    --popover-foreground: 120 15% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 130 50% 70%;
+    --primary-foreground: 140 30% 15%;
+    --primary-hover: 130 55% 75%;
+    --primary-active: 130 45% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 140 20% 20%;
+    --secondary-foreground: 120 15% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 140 25% 18%;
+    --muted-foreground: 120 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 130 40% 65%;
+    --accent-foreground: 140 30% 15%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 130 50% 55%;
+    --success-foreground: 0 0% 98%;
+    --warning: 45 90% 55%;
+    --warning-foreground: 45 30% 15%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 140 25% 25%;
+    --input: 140 20% 22%;
+    --ring: 130 50% 60%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(130 50% 70%) 0%, hsl(145 45% 60%) 100%);
+    --gradient-steppe: linear-gradient(45deg, hsl(45 60% 50%) 0%, hsl(60 70% 45%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(140 20% 15%) 0%, hsl(140 15% 8%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(140 20% 12%) 0%, hsl(140 25% 10%) 100%);
+
+    /* Dark mode shadows */
+    --shadow-soft: 0 2px 8px hsl(140 40% 5% / 0.3);
+    --shadow-medium: 0 4px 20px hsl(140 50% 3% / 0.4);
+    --shadow-strong: 0 8px 40px hsl(140 60% 2% / 0.5);
+    --shadow-plant: 0 6px 24px hsl(130 40% 5% / 0.3);
+
+    --sidebar-background: 140 20% 12%;
+    --sidebar-foreground: 120 15% 85%;
+    --sidebar-primary: 130 50% 65%;
+    --sidebar-primary-foreground: 140 30% 15%;
+    --sidebar-accent: 140 25% 18%;
+    --sidebar-accent-foreground: 120 15% 85%;
+    --sidebar-border: 140 25% 20%;
+    --sidebar-ring: 130 50% 60%;
   }
 }
 
@@ -101,5 +153,32 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/70;
+  }
+
+  /* Text utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
 }
