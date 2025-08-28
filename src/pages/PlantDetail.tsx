@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, MapPin, Calendar, Leaf, Stethoscope } from 'lucide-react';
+import PlantMap from '@/components/PlantMap';
 
 const PlantDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -124,6 +125,9 @@ const PlantDetail = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Map */}
+            <PlantMap regions={plant.region} />
 
             {/* Habitat */}
             <Card className="bg-gradient-card border-border/50">
